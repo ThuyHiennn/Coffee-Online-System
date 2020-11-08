@@ -33,7 +33,7 @@ namespace CoffeeOnlineSystem.Models
         {
         }
 
-
+        [Display(Name = "NO.")]
         public int IdProduct { get => idProduct; set => idProduct = value; }
 
         [Required(ErrorMessage = "Please Enter Name Product e.g. coffee")]
