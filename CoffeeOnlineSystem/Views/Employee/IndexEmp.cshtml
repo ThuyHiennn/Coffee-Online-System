@@ -1,18 +1,21 @@
 ﻿@model IEnumerable<CoffeeOnlineSystem.Models.account>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutForAdmin.cshtml";
+    ViewBag.Title = "IndexEmp";
+    Layout = "~/Views/Shared/_LayoutForEmployee.cshtml";
     int i = 0;
 }
 
-<h2>Index</h2>
+<h2>EMPLOYEE</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr class="bg-primary">
+        <th>
+            NO.
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.IdUser)
         </th>
@@ -28,6 +31,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Username)
         </th>
+       
         <th>
             @Html.DisplayNameFor(model => model.Gender)
         </th>
@@ -42,10 +46,12 @@
 
     @foreach (var item in Model)
     {
-
         <tr>
             <td>
                 @(++i)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUser)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Fullname)
@@ -59,6 +65,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Username)
             </td>
+           
             <td>
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
@@ -69,12 +76,11 @@
                 @Html.DisplayFor(modelItem => item.IdRole)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {id=item.IdUser  }) |
+                @Html.ActionLink("Details", "Detail", new { id = item.IdUser }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdUser })
             </td>
         </tr>
-    }
     }
 
 </table>

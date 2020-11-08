@@ -133,7 +133,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\accountController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\productsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -416,17 +417,23 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_LayoutForAdmin.cshtml" />
+    <Content Include="Views\Shared\_LayoutForProduct.cshtml" />
     <Content Include="Views\products\Index.cshtml" />
     <Content Include="Views\products\Detail.cshtml" />
     <Content Include="Views\products\Create.cshtml" />
     <Content Include="Views\products\Edit.cshtml" />
     <Content Include="Views\products\Delete.cshtml" />
-    <Content Include="Views\account\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutForCustomer.cshtml" />
+    <Content Include="Views\Shared\_LayoutForEmployee.cshtml" />
+    <Content Include="Views\customer\Index.cshtml" />
+    <Content Include="Views\customer\Detail.cshtml" />
+    <Content Include="Views\Employee\IndexEmp.cshtml" />
+    <Content Include="Views\Employee\Detail.cshtml" />
+    <Content Include="Views\Employee\Create.cshtml" />
+    <Content Include="Views\Employee\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
