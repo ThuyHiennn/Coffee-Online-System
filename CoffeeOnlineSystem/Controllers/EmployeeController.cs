@@ -5,19 +5,18 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-
 namespace CoffeeOnlineSystem.Controllers
 {
-    public class productsController : Controller
+    public class EmployeeController : Controller
     {
-        // GET: products
-        public ActionResult Index(string strSearch)
+        // GET: Employee
+        public ActionResult IndexEmp(string strSearch)
         {
-            productsList stu = new productsList();
-            List<products> obj = stu.getProduct(null);
+            employeeList stu = new employeeList();
+            List<account> obj = stu.getEmployee(null);
             if (!string.IsNullOrEmpty(strSearch))
             {
-                obj = obj.Where(x => x.NameProduct.Contains(strSearch)).ToList();
+                obj = obj.Where(x => x.Fullname.Contains(strSearch)).ToList();
             }
             ViewBag.StrSearch = strSearch;
             return View(obj);
@@ -26,8 +25,8 @@ namespace CoffeeOnlineSystem.Controllers
         // GET: products/Details/5
         public ActionResult Detail(int id)
         {
-            productsList stu = new productsList();
-            List<products> obj = stu.getProduct(id);
+            employeeList stu = new employeeList();
+            List<account> obj = stu.getEmployee(id);
             return View(obj.FirstOrDefault());
         }
 
@@ -39,13 +38,13 @@ namespace CoffeeOnlineSystem.Controllers
 
         // POST: products/Create
         [HttpPost]
-        public ActionResult Create(products pro)
+        public ActionResult Create(account emp)
         {
             if (ModelState.IsValid)
             {
-                productsList proList = new productsList();
-                proList.addProduct(pro);
-                return RedirectToAction("Index");
+                employeeList empList = new employeeList();
+                empList.addEmp(emp);
+                return RedirectToAction("IndexEmp");
             }
             return View();
         }
@@ -53,20 +52,20 @@ namespace CoffeeOnlineSystem.Controllers
         // GET: products/Edit/5
         public ActionResult Edit(int id)
         {
-            productsList stu = new productsList();
-            List<products> obj = stu.getProduct(id);
+            employeeList stu = new employeeList();
+            List<account> obj = stu.getEmployee(id);
             return View(obj.FirstOrDefault());//chi laay 1 san pham thoi
         }
 
         // POST: products/Edit/5
         [HttpPost]
-        public ActionResult Edit(products pro)
+        public ActionResult Edit(account emp)
         {
             if (ModelState.IsValid)
             {
-                productsList proList = new productsList();
-                proList.update(pro);
-                return RedirectToAction("Index");
+                employeeList empList = new employeeList();
+                empList.update(emp);
+                return RedirectToAction("IndexEmp");
             }
 
             return View();
@@ -74,11 +73,10 @@ namespace CoffeeOnlineSystem.Controllers
         // GET: products/Delete/5
         public ActionResult Delete(int id)
         {
-            productsList proList = new productsList();
+            customertList proList = new customertList();
             proList.delete(id);
-            return RedirectToAction("Index");
+            return RedirectToAction("IndexEmp");
         }
-
 
 
     }

@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutForAdmin.cshtml";
+    Layout = "~/Views/Shared/_LayoutForProduct.cshtml";
     int i = 0;
 }
 
@@ -13,6 +13,9 @@
 </p>
 <table class="table ">
     <tr class="bg-primary">
+        <th>
+            NO.
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.IdProduct)
         </th>
@@ -38,34 +41,37 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @(++i)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NameProduct)
-        </td>
-        <td>
-            <img src="~/images/@Url.Content(item.Image)" style="height:100px" />
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InventoryProduct)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Price)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IDCatogory)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.IdProduct }) |
-            @Html.ActionLink("Details", "Detail", new { id = item.IdProduct }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.IdProduct })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @(++i)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdProduct)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NameProduct)
+    </td>
+    <td>
+        <img src="~/images/@Url.Content(item.Image)" style="height:100px" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.InventoryProduct)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Description)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDCatogory)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.IdProduct }) |
+        @Html.ActionLink("Details", "Detail", new { id = item.IdProduct }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.IdProduct })
+    </td>
+</tr>
  
 }
 

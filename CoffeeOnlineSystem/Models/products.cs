@@ -62,10 +62,10 @@ namespace CoffeeOnlineSystem.Models
         public int IDCatogory { get => idCatogory; set => idCatogory = value; }
 
     }
-    class productList
+    class productsList
     {
         DBConection db;
-        public productList()
+        public productsList()
         {
             db = new DBConection();
         }

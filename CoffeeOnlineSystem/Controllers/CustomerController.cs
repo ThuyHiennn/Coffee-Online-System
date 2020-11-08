@@ -7,8 +7,11 @@ using System.Web.Mvc;
 
 namespace CoffeeOnlineSystem.Controllers
 {
-    public class accountController : Controller
+    public class CustomerController : Controller
     {
+
+        //CUSTOMER
+
         // GET: customer
         public ActionResult Index(string strSearch)
         {
@@ -21,5 +24,19 @@ namespace CoffeeOnlineSystem.Controllers
             ViewBag.StrSearch = strSearch;
             return View(obj);
         }
+        public ActionResult Delete(int id)
+        {
+            customertList proList = new customertList();
+            proList.delete(id);
+            return RedirectToAction("Index");
+        }
+        public ActionResult Detail(int id)
+        {
+            customertList stu = new customertList();
+            List<account> obj = stu.getCustomer(id);
+            return View(obj.FirstOrDefault());
+        }
+       
+
     }
 }
