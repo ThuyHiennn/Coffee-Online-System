@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutForAdmin.cshtml";
+    int i = 0;
 }
 
 <h2>Index</h2>
@@ -10,8 +11,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
+<table class="table ">
+    <tr class="bg-primary">
         <th>
             @Html.DisplayNameFor(model => model.IdProduct)
         </th>
@@ -39,7 +40,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.IdProduct)
+            @(++i)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NameProduct)
@@ -65,6 +66,7 @@
             @Html.ActionLink("Delete", "Delete", new { id = item.IdProduct })
         </td>
     </tr>
+ 
 }
 
 </table>

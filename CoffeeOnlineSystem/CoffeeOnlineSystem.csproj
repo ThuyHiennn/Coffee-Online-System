@@ -133,11 +133,12 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\customerController.cs" />
+    <Compile Include="Controllers\accountController.cs" />
     <Compile Include="Controllers\productsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\account.cs" />
     <Compile Include="Models\DBConection.cs" />
     <Compile Include="Models\products.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -421,6 +422,7 @@
     <Content Include="Views\products\Create.cshtml" />
     <Content Include="Views\products\Edit.cshtml" />
     <Content Include="Views\products\Delete.cshtml" />
+    <Content Include="Views\account\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
